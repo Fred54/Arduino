@@ -129,6 +129,9 @@ Serial.begin(115200);
 Serial.println(F("ArduCAM Start!"));
 //set the CS as an output:
 pinMode(SPI_CS,OUTPUT);
+ delay(1000);
+// initialize SPI:
+SPI.begin();
 while(1){
   //Check if the ArduCAM SPI bus is OK
   myCAM.write_reg(ARDUCHIP_TEST1, 0x55);
